@@ -9,6 +9,7 @@ import mw from "../../Assets/mw.svg"
 import ng from "../../Assets/ng.svg"
 import rw from "../../Assets/rw.svg"
 import tz from "../../Assets/tz.svg"
+import {FaAngleUp} from "react-icons/fa"
 
 const Footer = () => {
     const [show, setshow] = useState(false)
@@ -30,6 +31,10 @@ const Footer = () => {
                             <Navs>Capital</Navs>
                             <Navs>Grow</Navs>
                             <Navs>Card Issuing</Navs>
+                            <Navs>FaaS</Navs>
+                            <Navs>Disha</Navs>
+                            <Navs>Send</Navs>
+                            <Navs>Tuition</Navs>
                     </SectionProducts>
                     <SectionResources>
                         <MNav>Resources</MNav>
@@ -111,8 +116,9 @@ const Footer = () => {
                             </DropUp>
                     ): null}
                         <DivIcon onClick={Dropdown}>
-                        <img src="" alt="" />
+                        <img src={ng} alt="" />
                         <h5>Nigeria </h5>
+                        <FaAngleUp/>
                         </DivIcon>
                     </CountryIcon>
                     <Socials>
@@ -144,17 +150,27 @@ const Footer = () => {
 export default Footer
 
 const Policy = styled.div`
-height: 80%;
 width: 75%;
 display: flex;
 justify-content: flex-end;
 align-items: center;
 gap: 20px;
-color: #bfbcbc;
+color: rgb(63,63,63);
+@media screen and (max-width: 500px){
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 `;
 const FlutterIcon = styled.div`
-height: 80%;
 width: 15%;
+@media screen and (max-width: 500px){
+    width: 50%;
+    text-align: center;
+}
 `;
 const Socials = styled.div`
 height: 80%;
@@ -163,27 +179,44 @@ display: flex;
 justify-content: flex-end;
 align-items: center;
 gap: 20px;
-color: #bfbcbc;
+color: rgb(63,63,63);
+@media screen and (max-width: 500px){
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 `;
 const DivIcon = styled.div`
 height: 70%;
-width: 30%;
+width: 50%;
 padding: 5px;
+font-size: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
+gap: 8px;
 border: 1px solid white;
 border-radius: 10px;
 cursor: pointer;
 transform: scale(0.98);
+@media screen and (max-width: 500px){
+    width: 90px;
+    height: 50px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
 `;
-
-
-
 
 const Cou = styled.div`
 margin-left: 5px;
 margin-top: 8px;
+@media screen and (max-width: 500px){
+    width: 50%;
+}
 `;
 const IconCountry = styled.div`
 height: 20%;
@@ -200,7 +233,15 @@ img {
     border-radius: 5px;
     transition: transform 0.2s ease-in-out;
     transform: translateY(-2px);
- }  
+ };
+ @media screen and (max-width: 500px){
+    width: 20%;
+    font-size: 15px;
+    
+    img{
+        width: 70%;
+    }
+}
 `;
 const DropUpWrapp = styled.div`
 height: 80%;
@@ -212,18 +253,34 @@ justify-content: flex-start;
 align-items: flex-start;
 gap: 20px;
 margin-top: 10px;
+@media screen and (max-width: 500px){
+   margin: 15px;
+}
 `;
 const DropUp = styled.div`
 height: 250px;
 width: 500px;
 border-radius: 10px;
 border: 1px solid white;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 position: absolute;
-bottom: 55px;
+bottom: 70px;
 display: flex;
 justify-content: center;
 align-items: center;
 background-color: white;
+@media screen and (max-width: 800px){
+    bottom: 100px;
+    width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media screen and (max-width: 500px){
+    bottom: 100px;
+    width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 `;
 const CountryIcon = styled.div`
 height: 80%;
@@ -231,96 +288,114 @@ width: 20%;
 position: relative;
 `;
 const Edge2 = styled.div`
-height: 50%;
 width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 30px;
-color: white;
-
-@media (max-width: 768px) {
-    margin-top: 20px;
+color: rgb(63,63,63);
+@media screen and (max-width: 500px){
     width: 100%;
-  }
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
 `;
 const Edge1 = styled.div`
-height: 50%;
 width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-border-top: 1px solid white;
-border-bottom: 1px solid white;
-color: white;
-@media (max-width: 768px) {
-    margin-top: 20px;
-  }
+border-top: 1px solid rgb(63,63,63);
+border-bottom: 1px solid rgb(63,63,63);
+color: rgb(63,63,63);
+@media screen and (max-width: 500px){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
 `;
 
 const FooterEdge = styled.div`
-height: 25%;
 width: 70%;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-@media (max-width: 768px) {
+@media screen and (max-width: 500px){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     flex-direction: column;
-  }
+    flex-wrap: wrap;
+}
 `;
 
 const SectionContact = styled.div`
-height: 100%;
 width: 16%;
 display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 flex-direction: column;
-gap: 20px;
+gap: 30px;
+@media screen and (max-width: 500px){
+    width: 40%;
+}
 `;
 const SectionCompany = styled.div`
-height: 100%;
 width: 16%;
-color: white;
+color: rgb(63,63,63);
 display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 flex-direction: column;
-gap: 20px;
+gap: 30px;
+@media screen and (max-width: 500px){
+    width: 40%;
+}
 `;
 const SectionDevelopers = styled.div`
-height: 100%;
 width: 16%;
-color: white;
+color: rgb(63,63,63);
 display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 flex-direction: column;
-gap: 20px;
+gap: 30px;
+@media screen and (max-width: 500px){
+    width: 40%;
+}
 `;
 const SectionResources = styled.div`
-height: 100%;
 width: 16%;
-color: white;
+color: rgb(63,63,63);
 display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 flex-direction: column;
-gap: 20px;
+gap: 30px;
+@media screen and (max-width: 500px){
+    width: 40%;
+}
 `;
 const SectionProducts = styled.div`
-height: 100%;
 width: 16%;
-color: white;
+color: rgb(63,63,63);
 display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 flex-direction: column;
-gap: 20px;
+gap: 30px;
+@media screen and (max-width: 500px){
+    width: 40%;
+}
 `;
 const Navs = styled.div`
-color: #bfbcbc;
+color: rgb(63,63,63);
 &:hover{
     color: orange;
     cursor: pointer;
@@ -329,34 +404,43 @@ color: #bfbcbc;
 const MNav = styled.div`
 font-size: 25px;
 font-weight: bold;
-color: white;
+color: rgb(63,63,63)white;
 `;
 const LiWrapper = styled.div`
-height: 100%;
 width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 gap: 40px;
 margin-top: 90px;
+margin-bottom: 50px;
+@media screen and (max-width: 500px){
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 `;
 const FooterWrapper = styled.div`
-height: 75%;
 width: 70%;
 display: flex;
-justify-content: center;
-align-items: center;
-@media (max-width: 768px) {
-    padding: 20px 10px;
-  }
+@media screen and (max-width: 500px){
+    flex-wrap: wrap;
+    width: 95%;
+}
 `;
 
 const FooterContainer = styled.div`
-height: 75vh;
+height: 100%;
 width: 100%;
-background-color: #1D1D1D;
+padding-top: 70px;
+background-color: #fff;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+@media screen and (max-width: 500px){
+    flex-wrap: wrap;
+    background-color: #939393;
+}
 `;

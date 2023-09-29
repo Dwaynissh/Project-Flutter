@@ -1,10 +1,24 @@
 import { styled} from 'styled-components'
-import pic from '../Assets/logo-removebg-preview.png'
-import { useState } from 'react'
-import {NavLink} from "react-router-dom"
-// import {AiOutlineMenu} from 'react-icons/ai'
+import pic from '../Assets/logo.png'
+import { useEffect, useState } from 'react'
+import {AiOutlineMenu} from 'react-icons/ai'
 
 const Upload = () =>{
+
+    const [minutes, setMinutes] = useState(0)
+    useEffect(()=>{
+        const Target = new Date("9/08/2023 11:59:59")
+    
+        const interval = setInterval(()=>{
+          const now = new Date ()
+          const difference =Target.getMinutes() - now.getMinutes()  
+
+          const m = Math.floor((difference % (1000 * 60 * 60 )/(1000 * 60)))
+          setMinutes(m)
+        
+        })
+        
+      })
 
     const [Images, setImages] = useState("")
     const [previousImages, setPreviewImages] = useState("")
@@ -35,11 +49,9 @@ const Upload = () =>{
                         <Nav>Features</Nav>
                         <Nav>Company</Nav>
                     </NavHold>
-                    <NavLink to = "/" style={{ textDecoration: "none"}}>
                     <Button>Upload</Button>
-                    </NavLink>
                
-                    {/* <Icon><AiOutlineMenu/> </Icon> */}
+                    <Icon><AiOutlineMenu/> </Icon>
                 </Header>
                 <Wrapper>
                 <Holder>
@@ -57,12 +69,16 @@ const Upload = () =>{
                                 />
                         </Profile>                               
                         <InputsHolder>
-                        <input placeholder="Enter Yor Full Name"></input>
-                        <input placeholder="Email"></input>
-                        <input placeholder="Password"  inputMode='numeric'></input>
-                        <input placeholder="select a category"></input>
+                        <input placeholder="Full Name"></input>
+                        <input placeholder="Company Name"></input>
+                        <input placeholder="Email Address"  inputMode='numeric'></input>
+                        <input placeholder="Phone number"></input>
+                        <input placeholder="Country your business is registered"></input>
+                        <input placeholder="Business Type"></input>
+                        <input placeholder="Industry"></input>
                         <Btn2>Submit</Btn2>
                         </InputsHolder>
+                       
                     </Holder>
                 </Wrapper>
             </Container>
@@ -72,6 +88,8 @@ const Upload = () =>{
 
 export default Upload;
 
+const Wrap = styled.div``
+const Hold = styled.div``
 const Icon = styled.div`
 display: none;
 /* font-size: 20px; */
@@ -92,27 +110,27 @@ const Input = styled.input``
 
 const Pic = styled.img`
 width: 250px;
-height: 250px;
-border: 1px solid #F1A5C2;
-border-radius: 20px;
+height: 300px;
+border: 1px solid #2e2d2d;
+border-radius: 10px;
 `
 
 const InputsHolder = styled.div`
 width: 40%;
-height: 240px;
-// background-color: red;
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-/* border: 1px solid silver; */
-gap: 10px;
+padding: 10px 20px;
+gap: 20px;
 input{
     width: 300px;
-    height: 30px;
-border: 1px solid silver;
-outline-color:#F1A5C2;
-border: none;
+    height: 40px;
+border: 1px solid grey;
+border-radius: 10px;
+outline-color: #424242;
+}::placeholder{
+    /* margin-t: 50px; */
 }
 `
 
@@ -124,6 +142,7 @@ padding: 10px 20px;
 border: none;
 color: white;
 background-color: lightgrey;
+background-color: #000000;
 `
 const Btn = styled.label`
 width: 160px;
@@ -134,6 +153,9 @@ border: none;
 background-color: #000000;
 color: white;
 text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
 ;
 &:hover{
     transition: all 350ms ease 0s;
@@ -143,8 +165,6 @@ text-align: center;
 
 const Profile = styled.div`
 width: 50%;
-height: 240px;
-// background-color: green;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -228,6 +248,8 @@ transition: all 350ms;
 const Nav = styled.div`
  font-size: 20px;
     font-weight: 400;
+color: black;
+
   
 `
 const NavHold = styled.div`
@@ -261,6 +283,8 @@ color: white;
 p{
     font-size: 20px;
     font-weight: 400;
+color: black;
+
 }
 `
 const Wrapper = styled.div`
@@ -268,8 +292,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
 width: 100%;
 height: 100%;
-padding: 100px 0;
-background-color: #1D1D1D;
+/* background-color: #1D1D1D; */
 display: flex;
 justify-content: center;
 align-items: center;

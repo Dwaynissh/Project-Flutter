@@ -4,7 +4,7 @@ import phone from '../../src/Assets/checkoutphone.png'
 
 const Features = () => {
     const [textColor, setTextColor] = useState<string>('black');
-  const colors = ['red', 'green', 'blue', 'orange', 'purple'];
+  const colors = ['black', 'rgb(251, 145, 41)'];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -83,23 +83,32 @@ transform: translateY(-2px);
 }
 `;
 const SecondHalf = styled.div`
-height: 40%;
 width: 100%;
 margin-left: 50px;
+@media screen and (max-width: 500px){
+    width: 100%;
+}
 `;
 const FirstHalf = styled.div`
-height: 40%;
 width: 100%;
 margin-left: 50px;
 margin-top: 50px;
+@media screen and (max-width: 500px){
+    width: 100%;
+}
 `;
 const PayTransfers = styled.div`
-height: 100%;
 width: 30%;
 display: flex;
 justify-content: space-between;
 align-items: center;
 flex-direction: column;
+@media screen and (max-width: 500px){
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
 `;
 const FImage = styled.div`
 height: 100%;
@@ -111,10 +120,10 @@ const GetStarted = styled.div`
 const Our = styled.div`
 line-height: 25px;
 font-size: 17px;
-color: white;
+color: rgb(63,63,63);
 `;
 const Online = styled.div`
-color: white;
+color: rgb(63,63,63);
 `;
 const Wrappem = styled.div`
 `;
@@ -126,17 +135,26 @@ justify-content: flex-start;
 align-items: center;
 `;
 const Contents = styled.div`
-height: 60%;
 width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
+@media screen and (max-width: 500px){
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 `;
 const TextH1 = styled.div`
 font-size: 40px;
 margin-left: 60px;
-color: white;
+color: rgb(63,63,63);
+@media screen and (max-width: 500px){
+   font-size: 25px;
+}
 `;
 const Payments = styled.div`
 height: 40%;
@@ -144,6 +162,11 @@ width: 100%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
+@media screen and (max-width: 500px){
+    width: 100%;
+    display: flex ;
+    justify-content: flex-start;
+}
 `;
 const FeaturesWrapp = styled.div`
 width: 80%;
@@ -162,6 +185,7 @@ transition: left 0.5s ease-in-out;
     100% {
         left: 0; 
     }
+ 
 }
 `;
 const FeaturesCover = styled.div`
@@ -171,5 +195,9 @@ padding: 80px 0;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #1D1D1D;
+background-color: #fff;
+@media screen and (max-width: 500px){
+    flex-wrap: wrap;
+    width: 10%;
+}
 `;

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
-
 const Hero = () => {
     const [textColor, setTextColor] = useState<string>('black');
-    const colors = ['red', 'green', 'blue', 'orange', 'purple'];
+    const colors = ['black'];
   
     useEffect(() => {
       const intervalId = setInterval(() => {
@@ -12,14 +11,14 @@ const Hero = () => {
       }, 1000);
       return () => {
           clearInterval(intervalId);
-        };
+        }
       }, []);
   return (
     <Container>
       <Wrapper>
         <Top>
 
-          <H1 style={{ color: textColor }}> <span>Endless possibilities</span> for all</H1>
+          <H1 style={{ color:  textColor }}> <span>Endless possibilities</span> for all</H1>
 
           <p>Unlocking boundless payment opportunities for enterprises, individuals, small businesses, emerging markets, and startups alike.</p>
 
@@ -57,11 +56,13 @@ cursor: pointer;
 font-size: 14px;
 font-weight: 500;
 
-@media (min-width: 375px) {
+@media screen and  (min-width: 375px){
   padding: 17px;
   transition: all 350ms;
-}
-@media (min-width: 425px) {
+}  
+
+
+@media  screen and  (min-width: 375px) {
   padding: 20px 30px;
   transition: all 350ms;
 }
@@ -136,7 +137,7 @@ margin-top: 15px;
 const Container = styled.div`
 width: 100%;
 height: 100%;
-background-color: #1D1D1D;
+background-color: #fff;
 display: flex;
 justify-content: center;
 `

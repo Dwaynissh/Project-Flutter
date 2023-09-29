@@ -136,7 +136,7 @@ const Header = () => {
             </NavHolder>
             <Icon cl="#fff" onClick={Tog}><AiOutlineMenu/></Icon>
             {drop? (<IconCard/>):null}
-            <NavLink to = '/upload-book' style={{ textDecoration: "none"}}>
+            <NavLink to = "./Upload" style={{ textDecoration: "none"}}>
             <Button>Upload</Button>
             </NavLink>
         </Wrapper>
@@ -176,7 +176,9 @@ const Header = () => {
             </NavHolder>
             <Icon cl="rgb(251, 145, 41)" onClick={Tog}><AiOutlineMenu/></Icon>
             {drop? (<IconCard/>):null}
-            <Button>Upload</Button>
+           <NavLink to= "upload">
+           <Button>Upload</Button>
+           </NavLink>
         </Wrapper>
     </Container>
   )}
@@ -283,5 +285,5 @@ align-items: center;
 position: relative;
 position: ${({po}) => po};
 transition: 350ms ease-in;
-z-index: 10;
+z-index: 20;
 `
